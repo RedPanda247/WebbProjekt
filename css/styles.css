@@ -1,0 +1,151 @@
+/* Default Global Presets */
+body{
+    /* style */
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+
+}
+
+
+/* NAVIGATION */
+
+/*  */
+nav{
+    /* style */
+    background-color: rgb(23, 29, 29);
+    padding: 1%;
+
+    /* display */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 60px;
+}
+
+.left_nav{
+    justify-content: center;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* Main Website */
+#website_main{
+    
+
+    padding: 5%;
+    margin: 0;
+
+}
+#website_main h1{
+    margin: 2%;
+
+    font-size: xxx-large;
+}
+
+.website_background_image{
+    position: absolute;
+}
+.info_boxes_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.IB{
+    /* display */
+    display: flex;
+    flex-wrap: nowrap;
+
+    /* size/position */
+    margin: 2%;
+    padding: 0.5%;
+    width: 40%;
+
+    /* apperance */
+    background-color: rgba(0, 0, 139, 0.473);
+    border-radius: 3cap;
+}
+
+.IB_img{
+    aspect-ratio: 1/1;
+    width: 50%;
+
+    border-radius: 3cap;
+}
+.IB_InfoTextSection{
+    width: 40%;
+}
+.IB_ExpandButton{
+    width: 10%;
+}
+
+@media (min-width: 1200px){
+    
+    /* dropdown menu "blueprint" */
+    .content{
+        position: absolute;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: black 4px;
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+        
+        
+        
+    }
+    .selector:focus + .content{
+        
+
+
+        opacity: 1;
+    }
+    .dropdown{
+        width: fit-content;
+    }
+
+}
+
+
+
+
+/* Util */
+
+/* remove text style */
+.rts{
+    text-decoration: none;
+    color: black;
+}
+
+/* left right center "blueprint" */
+.lrc{
+    display: flex;
+}
+.left{
+    width: 100cap;
+}
+.right{
+    width: 100cap;
+    display: flex;
+    justify-content: end;
+}
+.center{
+    width: min-content;
+}
+
+/* highlight border */
+.hl{
+    border: 4px black solid;
+}
