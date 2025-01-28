@@ -11,7 +11,8 @@ body{
 
 /* NAVIGATION */
 
-/*  */
+
+
 nav{
     /* style */
     background-color: rgb(23, 29, 29);
@@ -23,9 +24,14 @@ nav{
     align-items: center;
 }
 
-nav img{
+.Nav_Menu{
     width: 60px;
 }
+.Nav_Logo{
+    width: 80px;
+    border-radius: 50%;
+}
+
 
 .left_nav{
     justify-content: center;
@@ -35,6 +41,7 @@ nav img{
     display: flex;
     justify-content: flex-start;
 }
+
 
 
 /* Main Website */
@@ -73,15 +80,21 @@ nav img{
     margin: 2%;
     padding: 0.5%;
     width: 40%;
+    align-items: center;
 
     /* apperance */
     background-color: rgba(0, 0, 139, 0.473);
     border-radius: 3cap;
 }
-
-.IB_img{
-    aspect-ratio: 1/1;
+.IB_Title{
+    font-size: x-large;
+}
+.IB_Img{
     width: 50%;
+
+    /* keep height the same as width */
+    aspect-ratio: 1/1;
+    
 
     border-radius: 3cap;
 }
@@ -92,10 +105,16 @@ nav img{
     width: 10%;
 }
 
+/* Dropdownmenu */
+.Dropdown_Content{
+    display: none;
+
+}
+
 @media (min-width: 1200px){
     
     /* dropdown menu "blueprint" */
-    .content{
+    .Dropdown_Content{
         position: absolute;
         background-color: white;
         border-radius: 6px;
