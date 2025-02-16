@@ -1,17 +1,19 @@
 /* Default Global Presets */
 body{
     /* style */
-    background-color: blue;
+    background-color: rgb(7, 4, 202);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0%;
     padding: 0%;
-
+    
+}
+/* create a variable to control the speed of the transitions from one place */
+:root {
+    --transition-speed: 500ms;
 }
 
 
 /* NAVIGATION */
-
-
 
 nav{
     /* style */
@@ -33,14 +35,65 @@ nav{
 }
 
 
-.left_nav{
-    justify-content: center;
-}
+/* .left_nav{
+    
+} */
+
+/* Site navigation menu */
 
 .dropdown{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
+.dropdown p{
+    color: blue;
+    font-weight: bold;
+
+    text-shadow: 1px 1px 0px black;
+}
+
+.current-site--open-site-navigation-menu{
+    cursor: pointer;
+}
+.site-navigation-menu-items{
+    background-color: aqua;
+    top: 0;
+    
+}
+
+.site-navigation-menu-items.ct-unactive{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    /* position/animation */
+    transition: ease-in, var(--transition-speed);
+    transform: translateY(0);
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+}
+.site-navigation-menu-items.ct-active{
+    opacity: 100%;
+
+    /* position/animation */
+    transition: ease-in, var(--transition-speed);
+    transform: translateY(100px);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+/* Class Toggler */
+/* .ct-unactive{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.ct-active{
+    opacity: 100%;
+} */
 
 
 
@@ -61,6 +114,8 @@ nav{
 .website_background_image{
     position: absolute;
 }
+
+/* Info Boxes */
 .info_boxes_container{
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +127,7 @@ nav{
 
 
 .IB{
+    transition: var(--transition-speed);
     /* display */
     display: flex;
     flex-wrap: nowrap;
@@ -80,11 +136,16 @@ nav{
     margin: 2%;
     padding: 0.5%;
     width: 40%;
+    height: fit-content;
     align-items: center;
 
     /* apperance */
     background-color: rgba(0, 0, 139, 0.473);
     border-radius: 3cap;
+}
+.IB.ct-active{
+    transition: var(--transition-speed);
+    width: 100%;
 }
 .IB_Title{
     font-size: x-large;
@@ -102,14 +163,36 @@ nav{
     width: 40%;
 }
 .IB_ExpandButton{
+    transition: var(--transition-speed);
     width: 10%;
+    cursor: pointer;
+}
+.IB_ExpandButton.ct-active{
+    transition: var(--transition-speed);
+    transform: rotate(180deg);
+}
+.IB_InfoText.ct-active{
+    position: relative;
+    opacity: 100%;
+}
+.IB_InfoText.ct-unactive{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* Dropdownmenu */
-.Dropdown_Content{
-    display: none;
+/* Dropdown Sites Menu */
 
+/* Hamburger menu */
+menu img{
+    transform: rotate(0deg);
+    transition: ease-in, 300ms;
 }
+menu img:hover{
+    transform: rotate(90deg);
+    transition: ease-in, 300ms;
+}
+
 
 @media (min-width: 1200px){
     
