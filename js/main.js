@@ -50,12 +50,12 @@ document.addEventListener("click", function (event) {
       container.classList.add("ct-unactive");
 
       //find elements that are affected by the class toggler and are active
-      let affectedElements = container.querySelectorAll(
+      let activeElements = container.querySelectorAll(
         ".ct-active"
       );
 
       //deactivate all active classes
-      affectedElements.forEach((el) => {
+      activeElements.forEach((el) => {
         el.classList.remove("ct-active");
         el.classList.add("ct-unactive");
       });
@@ -64,12 +64,12 @@ document.addEventListener("click", function (event) {
 });
 
 //scroll to the IB when it is clicked
-document.querySelectorAll(".IB_ExpandButton").forEach((toggle) => {
+document.querySelectorAll(".ib-expand-button").forEach((toggle) => {
   toggle.addEventListener("click", function (event) {
     //make sure the scroll
     setTimeout(() => {
       //find the closest "IB" to the IB_ExpandButton
-      let container = this.closest(".IB");
+      let container = this.closest(".ib");
 
       //make sure it was found to prevent exeption
       if (container) {
@@ -79,3 +79,6 @@ document.querySelectorAll(".IB_ExpandButton").forEach((toggle) => {
     }, 300); // delay before scroll takes affect to avoid scrolling to an item that is changing position
   });
 });
+
+
+// document.querySelectorAll("*").forEach(el => el.style.outline = "1px solid red");
