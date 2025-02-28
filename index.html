@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Technoware - Home</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- import custom font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
   </head>
   <body>
     <!-- top navigation menu -->
@@ -22,13 +22,14 @@
           <div class="hl open-site-navigation-menu-button clickable ct-toggler">
             <!-- current site -->
             <h2 class="current-site">Home</h2>
+            <!-- expand arrow -->
             <img
               class="open-site-navigation-menu-expand-icon ct-affected"
-              src="images\expand-arrow.svg"
+              src="images/expand-arrow.svg"
               alt="dropdown arrow"
             />
           </div>
-
+          
           <div class="site-navigation-menu-items-container std-dropdown-container-style ct-unactive ct-affected">
             <!-- sites to go to -->
             <a class="clickable" href="html/about_us.html"><h2>About us</h2></a>
@@ -54,12 +55,12 @@
 
       <!-- right section of topnavigation menu -->
       <div class="lrc-right">
-        <menu class="ct-container">
-          <!-- Placeholder!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <section class="menu ct-container">
           <img
-            class="nav-menu  clickable ct-toggler"
+            title="Menu"
+            class="menu-img  clickable ct-toggler"
             src="images/hamburger-blue.svg"
-            alt="hamburger_menu"
+            alt="hamburger menu"
           />
           <div class="menu-dropdown-container std-dropdown-container-style ct-affected ct-unactive">
             <div class="menu-option-item clickable">
@@ -70,26 +71,19 @@
               <img src="images/pfp.svg" alt="Settings-icon">
               <p>Profile</p>
             </div>
-            <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
-            </div>
-            <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
-            </div>
           </div>
 
           <div class="menu-quickaccess-items-container">
             <div class="menu-option-item clickable">
               <img src="images/gear-icon.svg" alt="Settings-icon">
+              <p>Settings</p>
             </div>
             <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
-            </div>
-            <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
+              <img src="images/pfp.svg" alt="Settings-icon">
+              <p>Profile</p>
             </div>
           </div>
-        </menu>
+        </section>
       </div>
     </nav>
 
@@ -100,18 +94,22 @@
 
       <div class="info-boxes-container">
 
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img ct-affected" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -145,8 +143,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -154,18 +152,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -199,8 +201,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -208,18 +210,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -253,8 +259,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -262,18 +268,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -307,8 +317,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -316,18 +326,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -361,8 +375,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -370,18 +384,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -415,8 +433,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -424,18 +442,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -469,8 +491,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"
@@ -478,18 +500,22 @@
           />
         </div>
         
-        <!-- IB = InfoBox -->
-        <div class="ib ct-container ct-affected">
-          <img class="ib-img" src="" alt="Subject image" />
-          <div class="ib-info-box-text-section">
-            <h2 class="ib-title">About us</h2>
+        <!-- ib = InfoBox -->
+        <div class="ib ct-container ct-affected ct-unactive">
+          <section class="ib-introduction-section ct-affected">
+            <img class="ib-img" src="" alt="Subject image" />
+            <div class="ib-introduction-text-section ct-affected ct-unactive">
+              <h2 class="ib-title">About us</h2>
 
-            <p class="ib-introduction">
-              Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-              debitis tempore corrupti omnis magni.
-            </p>
-
+              <p class="ib-introduction-text">
+                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
+                debitis tempore corrupti omnis magni.
+              </p>
+            </div>
+          </section>
+          
+          <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
               Technoware is a leading tech conpany specialising in wearable
               products Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -523,8 +549,8 @@
               deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
               dolores! Ab!
             </p>
-          </div>
-
+          </section>
+          
           <img
             class="ib-expand-button clickable ct-toggler ct-affected"
             src="images/ExpandButton.svg"

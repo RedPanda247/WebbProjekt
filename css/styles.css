@@ -10,16 +10,27 @@
   scale: 110%;
 }
 
+/* left right center "tool" */
+.lrc-container {
+  display: flex;
+}
+.lrc-left {
+  width: 100cap;
+}
+.lrc-right {
+  width: 100cap;
+  display: flex;
+  justify-content: end;
+}
+.lrc-center {
+  width: min-content;
+}
+
+
 /* ==================================================================================================== */
 
 /* Default Global Presets */
 
-/*  */
-a{
-  text-decoration: underline;
-  text-decoration-color: blue;
-  color: black;
-}
 body {
   /* style */
   background-color: rgb(7, 4, 202);
@@ -37,16 +48,24 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-/* titles */
+/* links */
+a{
+  text-decoration: underline;
+  text-decoration-color: blue;
+  color: black;
+}
+/* headings */
 h1, h2{
-  font-family: "Audiowide";
+  font-family: "Audiowide", Arial, Helvetica, sans-serif;
   color: blue;
 }
 /* normal text */
 p{
-  font-family: "Chakra Petch";
+  font-family: "Chakra Petch", Arial, Helvetica, sans-serif;
   color: white;
 }
+
+
 /* Create a variable to control the speed of the transitions from one place */
 :root {
   --transition-speed: 500ms;
@@ -86,7 +105,7 @@ nav {
 
 /* menu */
 
-menu{
+.menu{
   padding: 0;
   margin: 0;
   display: flex;
@@ -95,7 +114,7 @@ menu{
 
 /* Hamburger menu */
 
-.nav-menu {
+.menu-img {
   /* shape */
   width: 60px;
 }
@@ -123,8 +142,7 @@ menu{
 
 .menu-dropdown-container{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-gap: 10px; /* Adjust gap as needed */
+  grid-template-columns: repeat(2, 1fr);
   direction: rtl;
 
   right: 10px;
@@ -242,39 +260,62 @@ menu{
 /* Info boxes */
 
 .ib {
-  /* transition */
-  transition: var(--transition-speed);
   /* display */
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-  /* size/position */
-  margin: 2%;
-  padding: 1%;
-  width: 40%;
-  height: fit-content;
   align-items: center;
+  /* shape/position */
+  margin: 2%;
+  padding: 3%;
+  height: fit-content;
   /* apperance */
   background-color: rgba(0, 4, 255, 0.178);
   border-radius: 3cap;
   box-shadow: 1px 1px 0.5em black;
 }
+.ib.ct-unactive{
+  /* transition */
+  transition: var(--transition-speed);
+
+  width: 40%;
+}
+
 .ib.ct-active {
   transition: var(--transition-speed);
   width: 100%;
+  flex-direction: column;
 }
-.ib-title {
-  font-size: x-large;
+.ib-introduction-section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .ib-img {
   width: 50%;
+  max-width: 600px;
   /* keep height the same as width */
   aspect-ratio: 1/1;
   border-radius: 3cap;
   box-shadow: 1px 1px 0.5em black;
 }
-.ib-info-box-text-section {
-  padding: 1%;
-  width: 40%;
+.ib-img.ct-active{
+  flex: 1;
+}
+.ib-title {
+  font-size: x-large;
+}
+
+.ib-introduction-text-section {
+  padding: 2%;
+  display: block;
+}
+.ib-introduction-text-section.ct-unactive {
+  width: 50%;
+}
+.ib-introduction-text-section.ct-active{
+  width: 20em;
 }
 .ib-expand-button {
   transition: var(--transition-speed);
@@ -283,7 +324,10 @@ menu{
 }
 .ib-expand-button.ct-active {
   transition: var(--transition-speed);
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
+}
+.ib-info-text{
+  max-width: 70%;
 }
 .ib-info-text.ct-active {
   position: relative;
@@ -295,33 +339,55 @@ menu{
   pointer-events: none;
 }
 
-@media (min-width: 8cm) {
-  
+/* tablet */
+@media (max-width: 30cm) {
+  /* nav */
+  .site-navigation-menu-quickacces-items-container{
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  /* ib */
+  .ib{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ib-introduction-section{
+    flex-direction: column;
+  }
+  .ib-introduction-section.ct-active{
+    flex-direction: row;
+  }
+
+  .ib-expand-button{
+    transform: rotateZ(90deg);
+  }
+
+  .ib-img{
+    width: 100%;
+  }
+
+  .ib-introduction-text-section.ct-unactive{
+    width: 100%;
+  }
 }
-
-/* Util */
-
-
-
-/* left right center "blueprint" */
-.lrc-container {
-  display: flex;
+/* phone */
+@media (max-width: 20cm) {
+  .ib.ct-unactive{
+    width: 100%;
+  }
+  .ib.ct-active{
+    justify-content: center;
+  }
+  .ib-introduction-section.ct-active {
+    flex-direction: column;
+  }
+  .ib-introduction-text-section.ct-active{
+    width: 100%;
+  }
+  .ib-info-text.ct-active {
+    width: 90%;
+  }
 }
-.lrc-left {
-  width: 100cap;
-}
-.lrc-right {
-  width: 100cap;
-  display: flex;
-  justify-content: end;
-}
-.lrc-center {
-  width: min-content;
-}
-
-/* highlight border */
-.hl {
-  border: 4px black solid;
-}
-
-
