@@ -36,6 +36,7 @@ document.querySelectorAll(".ct-toggler").forEach((toggle) => {
   });
 });
 
+
 // deactivate class toggler if a click occurs somewhere other that the container
 
 // run function for every clicked element with class "ct-container"
@@ -62,6 +63,7 @@ document.addEventListener("click", function (event) {
     }
   });
 });
+
 
 //scroll to the IB when it is clicked
 document.querySelectorAll(".ib-expand-button").forEach((toggle) => {

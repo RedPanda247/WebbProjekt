@@ -30,7 +30,7 @@
             />
           </div>
           
-          <div class="site-navigation-menu-items-container std-dropdown-container-style ct-unactive ct-affected">
+          <div class="site-navigation-menu-items-container std-dropdown ct-unactive ct-affected">
             <!-- sites to go to -->
             <a class="clickable" href="html/about_us.html"><h2>About us</h2></a>
             <a class="clickable" href="html/products.html"><h2>Products</h2></a>
@@ -54,37 +54,56 @@
       </div>
 
       <!-- right section of topnavigation menu -->
-      <div class="lrc-right">
-        <section class="menu ct-container">
+      <section class="lrc-right menu">
+        <div class="hamburger-menu ct-container">
           <img
             title="Menu"
             class="menu-img  clickable ct-toggler"
             src="images/hamburger-blue.svg"
             alt="hamburger menu"
           />
-          <div class="menu-dropdown-container std-dropdown-container-style ct-affected ct-unactive">
-            <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
-              <p>Settings</p>
-            </div>
-            <div class="menu-option-item clickable">
-              <img src="images/pfp.svg" alt="Settings-icon">
-              <p>Profile</p>
-            </div>
-          </div>
+          <div class="hamburger-menu-dropdown-container std-dropdown ct-affected ct-unactive">
 
-          <div class="menu-quickaccess-items-container">
-            <div class="menu-option-item clickable">
-              <img src="images/gear-icon.svg" alt="Settings-icon">
-              <p>Settings</p>
+            <div class="ct-container">
+
+              <!-- settings icon / button -->
+              <div class="menu-option-item clickable ct-toggler">
+                <img src="images/gear-icon.svg" alt="Settings-icon">
+                <p>Settings</p>
+              </div>
+              
+              <!-- settings dropdown -->
+              <section class="settings-dropdown-container std-dropdown ct-affected ct-unactive">
+                <h2>Settings</h2>
+                <div class="settings-option">
+                  <p class="settings-option-text">Automatic Scroll</p>
+                  <div class="settings-option-inputfield">
+                    <img src="images/gear-icon.svg" alt="Settings-icon">
+                  </div>
+                </div>
+              </section>
+
             </div>
             <div class="menu-option-item clickable">
               <img src="images/pfp.svg" alt="Settings-icon">
               <p>Profile</p>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+        
+
+        <div class="menu-quickaccess-items-container">
+          <div class="menu-option-item clickable">
+            <img src="images/gear-icon.svg" alt="Settings-icon">
+            <p>Settings</p>
+          </div>
+          <div class="menu-option-item clickable">
+            <img src="images/pfp.svg" alt="Settings-icon">
+            <p>Profile</p>
+          </div>
+        </div>
+      
+      </section>
     </nav>
 
     <!-- main website section -->

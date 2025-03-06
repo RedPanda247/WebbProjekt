@@ -2,6 +2,7 @@
 
 /* Clickable */
 .clickable{
+  cursor: pointer;
   transition: 100ms;
 }
 .clickable:hover{
@@ -71,15 +72,32 @@ p{
   --transition-speed: 500ms;
 }
 
-/* standard dropdown container style */
-.std-dropdown-container-style{
+/* standard dropdown container style and behaviour */
+.std-dropdown {
   background-color: rgb(32, 32, 32);
   border: solid 0px;
-  top: 0;
-  padding: 0.8%;
+  top: 0px;
+  padding: 8px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   border-radius: 1cap;
+  
+  position: absolute;
 }
+
+.std-dropdown.ct-unactive {
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-speed);
+}
+
+.std-dropdown.ct-active {
+  pointer-events: all;
+  opacity: 1;
+  transition: var(--transition-speed);
+  transform: translateY(100%);
+}
+
+
 
 /* ==================================================================================================== */
 
@@ -125,6 +143,11 @@ nav {
   width: fit-content;
 }
 
+.hamburger-menu {
+  display: flex;
+  justify-content: center;
+}
+
 .menu-option-item p{
   font-size: x-small;
   margin: 0;
@@ -133,41 +156,56 @@ nav {
 }
 
 .menu-option-item{
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   margin: 0.5em;
   width: 40px;
 }
 
-.menu-dropdown-container{
+.hamburger-menu-dropdown-container{
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   direction: rtl;
 
   right: 10px;
   width: fit-content;
+  pointer-events: all;
 }
 
 /* menu dropdown container active/unactive */
 
-.menu-dropdown-container.ct-unactive{
+.hamburger-menu-dropdown-container.ct-unactive{
   opacity: 0;
-  pointer-events: none;
 
   /* position/animation */
-  position: absolute;
   transition: ease-in, var(--transition-speed);
   transform: translateY(0);
 }
 
-.menu-dropdown-container.ct-active{
+.hamburger-menu-dropdown-container.ct-active{
   opacity: 100%;
-
-  /* position/animation */
   transition: ease-in, var(--transition-speed);
-  transform: translateY(100px);
-  position: absolute;
+}
+
+.settings-dropdown-container {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+}
+
+.settings-dropdown-container.ct-active {
+
+}
+
+.settings-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.settings-option-inputfield {
+  width: 10px;
 }
 
 /* ==================================================================================================== */
