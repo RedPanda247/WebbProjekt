@@ -82,5 +82,4 @@ document.querySelectorAll(".ib-expand-button").forEach((toggle) => {
   });
 });
 
-
 // document.querySelectorAll("*").forEach(el => el.style.outline = "1px solid red");
