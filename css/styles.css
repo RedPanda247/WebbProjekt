@@ -1,4 +1,47 @@
+/* "ct"/class-toggler (Information/Documentation) */
+
+  /* How to use:
+
+    use classes "ct-unactive" and "ct-active" to specify state of element when page is loaded
+    
+    use class "ct-container" to encapsulate elements to be affected by class toggling 
+    (ct-toggler will not affect ct-affected outside of its closest ancestor ct-container, 
+    and will not affect inside other ct-containers inside it's closest ancestor ct-container)
+
+    use class "ct-affected" for elements that should have their "ct-unactive" and "ct-active" 
+    classes toggled, on a click event of element with class "ct-toggler" in same ct-container
+
+    use class "ct-toggler" for the element that activates class-toggling for elements with 
+    class "ct-affected" 
+
+    use class "ct-deactivateOnOutsideClick" to specify if an element with class "ct-affected"
+    should be deactivated if a click occurs outside it's ct-container (usefull for dropdowns)
+  */
+
+  /* Functionality information:
+
+    if there is a ct-container inside/(any level of decendant of the element) a ct-container 
+    then class-toggling-events will not enter child ct-container 
+    
+    if a ct-toggler does not have an ancestor ct-container it will not do anything 
+    and will throw error in console if in "debug mode" 
+    */
+
+/* Use convention (order of style assignment):
+  assign default style: #1 
+  assign unactive style: #2
+  assign active style:#3
+*/
+
+/* ==================================================================================================== */
+
 /* Overritable tool classes */
+
+/* Debug */
+
+.show-borders {
+  border: solid red 1px;
+}
 
 /* Clickable */
 .clickable{
@@ -34,7 +77,7 @@
 
 body {
   /* style */
-  background-color: rgb(7, 4, 202);
+  background-color: black;
 
   /* text */
   font-family: Arial, Helvetica, sans-serif;
@@ -48,6 +91,13 @@ body {
   background-image: url('../images/tech-background.jpeg');
   background-size: cover;
   background-attachment: fixed;
+}
+/* buttons */
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  padding: 0%;
+  margin: 0px;
 }
 /* links */
 a{
@@ -203,8 +253,42 @@ nav {
   justify-content: space-between;
 }
 .settings-option-inputfield {
-  width: 10px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }
+.toggle-slider {
+  padding: 0;
+  border-radius: 5cap;
+  margin: 4px;
+  aspect-ratio: 2/1;
+  width: 35px;
+}
+.toggle-slider.ct-unactive {
+  transition: var(--transition-speed);
+  background-color: grey;
+}
+.toggle-slider.ct-active {
+  transition: var(--transition-speed);
+  background-color: lightskyblue;
+}
+.toggle-slider-knobb {
+  transition: var(--transition-speed);
+  margin: 2px;
+  aspect-ratio: 1/1;
+  height: 70%;
+  border-radius: 5cap;
+  background-color: white;
+  border: 1px solid darkslategrey;
+}
+.toggle-slider-knobb.ct-unactive {
+ float: left;
+ transition: var(--transition-speed);
+}
+.toggle-slider-knobb.ct-active {
+  float: right;
+  transition: var(--transition-speed);
+ }
 
 /* ==================================================================================================== */
 
@@ -310,6 +394,7 @@ nav {
   background-color: rgba(0, 4, 255, 0.178);
   border-radius: 3cap;
   box-shadow: 1px 1px 0.5em black;
+  width: 600px;
 }
 .ib.ct-unactive{
   /* transition */
@@ -389,26 +474,23 @@ nav {
   }
 
   /* ib */
-  .ib{
+  .ib.ct-unactive{
+    transition: ease-in-out, var(--transition-speed);
     display: flex;
     flex-direction: column;
   }
 
-  .ib-introduction-section{
+  .ib-introduction-section.ct-unactive{
     flex-direction: column;
-  }
-  .ib-introduction-section.ct-active{
-    flex-direction: row;
   }
 
   .ib-expand-button{
     transform: rotateZ(90deg);
   }
 
-  .ib-img{
+  .ib-img.ct-unactive{
     width: 100%;
   }
-
   .ib-introduction-text-section.ct-unactive{
     width: 100%;
   }
@@ -416,18 +498,24 @@ nav {
 /* phone */
 @media (max-width: 20cm) {
   .ib.ct-unactive{
+    transition: ease-in-out, var(--transition-speed);
     width: 100%;
   }
   .ib.ct-active{
+    transition: ease-in-out, var(--transition-speed);
     justify-content: center;
   }
   .ib-introduction-section.ct-active {
     flex-direction: column;
   }
-  .ib-introduction-text-section.ct-active{
+  .ib-introduction-text-section{
+    width: 90%;
+  }
+  .ib-img{
     width: 100%;
   }
   .ib-info-text.ct-active {
-    width: 90%;
+    width: 100%;
+    max-width: 30em;
   }
 }
