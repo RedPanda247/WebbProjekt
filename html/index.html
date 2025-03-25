@@ -132,7 +132,7 @@
 
         <!-- menu quick access options -->
         <div class="menu-quickaccess-items-container">
-          <div class="ct-container ct-deactivateOnOutsideClick">
+          <div class="menu-option--settings ct-container ct-deactivateOnOutsideClick">
             <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
             <!-- settings icon - clickable button -->
             <div class="menu-option-item clickable ct-toggler">
@@ -142,7 +142,7 @@
 
             <!-- settings dropdown container -->
             <section
-              class="settings-dropdown-container std-dropdown ct-affected ct-unactive"
+              class="settings-dropdown-container std-dropdown ct-affected ct-unactive ct-deactivateOnOutsideClick"
             >
               <h2>Settings</h2>
 
@@ -160,6 +160,7 @@
                   </button>
                 </div>
               </div>
+
             </section>
           </div>
 
@@ -173,7 +174,7 @@
 
     <!-- main website section -->
     <section class="website-main">
-      <h1 class="ct-toggler">Home</h1>
+      <h1>Home</h1>
 
       <div class="info-boxes-container">
         <!-- ib = InfoBox -->
@@ -198,7 +199,7 @@
       <div class="ib-t" data-img="../images/about-us.jpg"></div>
 
 
-        <div class="ib ct-container ct-affected ct-unactive">
+        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"

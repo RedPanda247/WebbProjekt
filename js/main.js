@@ -4,7 +4,7 @@ let debug_mode = true;
 
 
 // ct = Class Toggler
-// add event listener to all elements with the "affected_element-toggle" class in order to allow code to be executed when they are pressed
+// add event listener to all elements with the "ct-toggler" class in order to allow code to be executed when they are clicked
 document.querySelectorAll(".ct-toggler").forEach((toggle) => {
   toggle.addEventListener("click", function (event) {
 
@@ -18,8 +18,6 @@ document.querySelectorAll(".ct-toggler").forEach((toggle) => {
       // find the closest relative/anscestor to this element that has the "ct-container" class and input that in to a variable
       container = this.closest(".ct-container");
     }
-    
-    
 
     // if the code didn't find any relative/anscestor to this element with the "ct-container" class, meaning the variable value is null, then
     if (container == null) {
@@ -28,7 +26,7 @@ document.querySelectorAll(".ct-toggler").forEach((toggle) => {
       return;
     }
 
-    // find all elements with the "ct-affected" class inside this container but not inside other elements with the "ct-container" class
+    // find all elements with the "ct-affected" class inside this container -later- but not inside other elements with the "ct-container" class
     let allAffected = container.querySelectorAll(".ct-affected");
 
     // filter out elements that are inside another ".ct-container"
@@ -44,38 +42,40 @@ document.querySelectorAll(".ct-toggler").forEach((toggle) => {
       affected.classList.toggle("ct-active");
       affected.classList.toggle("ct-unactive");
     });
-
-    // prevent the click event from being detected by parent elements of the clicked element
-    event.stopPropagation();
   });
 });
 
 
-// deactivate class togglers  if a click occurs somewhere other that the container
-// and they have the class "ct-deactivateOnOutsideClick"
+// if click uccurs, find all ct-containers that hav the class "ct-deactivateOnOutsideClick"
+// and deactivate all their children that also have that container as the closest ancestor 
+// that is a ct-container 
+// (^ to not affect a normal ct-container (inside this one), that doesn't have the 
+// "ct-deactivateOnOutsideClick" class)
 
-// run function for every clicked element with class "ct-container"
+// if click uccurs, find all ct-containers that hav the class "ct-deactivateOnOutsideClick"
 document.addEventListener("click", function (event) {
   document.querySelectorAll('.ct-container.ct-deactivateOnOutsideClick').forEach((container) => {
-    console.log("Container found with both classes", container);
-    // if click didn't occur in the container
+
+    // if click didn't occur in this container continue
     if (!container.contains(event.target)) {
+      // deactivate container (if it is activated)
+      if (container.classList.contains("ct-active")) {
+        container.classList.remove("ct-active");
+        container.classList.add("ct-unactive");
+      }
 
-      // deactivate container
-      container.classList.remove("ct-active");
-      container.classList.add("ct-unactive");
-
-      //find elements that are affected by the class toggler and are active
-      let activeElements = container.querySelectorAll(".ct-active");
-
-      //deactivate all active classes
-      activeElements.forEach((el) => {
-        el.classList.remove("ct-active");
-        el.classList.add("ct-unactive");
+      // find all active children, but only deactivate the ones that have this container
+      // as their closest ct-container
+      container.querySelectorAll(".ct-active").forEach((activeElement) => {
+        if (activeElement.closest(".ct-container") === container) {
+          activeElement.classList.remove("ct-active");
+          activeElement.classList.add("ct-unactive");
+        }
       });
     }
   });
 });
+
 
 // toggle automatic scroll setting
 let auto_scroll_enabled = true; 
