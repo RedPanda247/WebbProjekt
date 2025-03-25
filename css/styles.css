@@ -41,6 +41,7 @@
 
 .show-borders {
   border: solid red 1px;
+  box-sizing: border-box;
 }
 
 /* Clickable */
@@ -98,6 +99,7 @@ button {
   background-color: rgba(0, 0, 0, 0.0);
   padding: 0%;
   margin: 0px;
+  cursor: pointer;
 }
 /* links */
 a{
@@ -153,7 +155,7 @@ p{
 
 /* Navigation menu */
 
-nav {
+header {
   /* style */
   background-color: rgba(0, 0, 0, 0.7);
   padding: 1%;

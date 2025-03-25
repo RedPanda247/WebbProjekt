@@ -2,7 +2,6 @@
 let debug_mode = true;
 
 
-
 // ct = Class Toggler
 // add event listener to all elements with the "ct-toggler" class in order to allow code to be executed when they are clicked
 document.querySelectorAll(".ct-toggler").forEach((toggle) => {
@@ -79,11 +78,43 @@ document.addEventListener("click", function (event) {
 
 // toggle automatic scroll setting
 let auto_scroll_enabled = true; 
-document.querySelectorAll(".automatic-scroll-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", function (event) {
+// if click occurs, find all elements with class "automatic-scroll-toggle"
+// and filter out the toggles that weren't clicked
+document.addEventListener("click", function (event) {
+  document.querySelectorAll('.automatic-scroll-toggle').forEach((toggle) => {
+    if (!toggle.contains(event.target)) return;
+
+    // toggle variable 
     auto_scroll_enabled = !auto_scroll_enabled;
+
+    // find all toggles (and knobbs) for automatic scroll and update their class toggler value
+    document.querySelectorAll('.automatic-scroll-toggle, .toggle-slider-knobb').forEach((toggleToUpdate) => {
+      toggleToUpdate.ctSetState(auto_scroll_enabled);
+    });
   });
 });
+
+
+// set the class toggler state of element by taking in a boolean
+HTMLElement.prototype.ctSetState = function ctSetState(state) {
+  if (state) {
+    this.classList.remove("ct-unactive");
+    this.classList.add("ct-active");
+  } else {
+    this.classList.remove("ct-active");
+    this.classList.add("ct-unactive");
+  }
+}
+
+// get the class toggler state of element by returning true if it has class ct-active
+// and returning false otherwise
+HTMLElement.prototype.ctGetState = function ctGetState() {
+  if (this.classList.contains("ct-active")) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 //scroll to the IB when it is clicked
 document.querySelectorAll(".ib-expand-button").forEach((toggle) => {

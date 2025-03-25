@@ -27,11 +27,10 @@
     />
   </head>
   <body>
-    <!-- top navigation menu -->
     <!-- using class lrc (LeftRightCenter) to to position children -->
-    <nav class="lrc-container">
+    <header class="lrc-container">
       <!-- left section of top navigation menu -->
-      <div class="lrc-left left-nav">
+      <section class="lrc-left">
         <!-- site navigation menu -->
         <section
           class="site-navigation-section ct-container ct-deactivateOnOutsideClick"
@@ -55,22 +54,22 @@
             class="site-navigation-menu-items-container std-dropdown ct-unactive ct-affected"
           >
             <!-- sites to go to -->
-              <a class="clickable" href="about_us.html"><h2>About us</h2></a>
-              <a class="clickable" href="products.html"><h2>Products</h2></a>
-              <a class="clickable" href="news.html"><h2>News</h2></a>
+            <a class="clickable" href="about_us.html"><h2>About us</h2></a>
+            <a class="clickable" href="products.html"><h2>Products</h2></a>
+            <a class="clickable" href="news.html"><h2>News</h2></a>
           </div>
 
           <!-- site navigation quick access -->
-          <div class="site-navigation-menu-quickacces-items-container">
-              <a class="clickable" href="about_us.html"><h2>About us</h2></a>
-              <a class="clickable" href="products.html"><h2>Products</h2></a>
-              <a class="clickable" href="news.html"><h2>News</h2></a>
-          </div>
+          <section class="site-navigation-menu-quickacces-items-container">
+            <a class="clickable" href="about_us.html"><h2>About us</h2></a>
+            <a class="clickable" href="products.html"><h2>Products</h2></a>
+            <a class="clickable" href="news.html"><h2>News</h2></a>
+          </section>
         </section>
-      </div>
+      </section>
 
       <!-- center section of top navigation menu -->
-      <div class="lrc-center">
+      <section class="lrc-center">
         <!-- company logo -->
         <a href="index.html">
           <img
@@ -79,12 +78,14 @@
             alt="company logo"
           />
         </a>
-      </div>
+      </section>
 
       <!-- right section of topnavigation menu -->
       <section class="lrc-right menu">
         <!-- hamburger menu -->
-        <div class="hamburger-menu ct-container ct-deactivateOnOutsideClick">
+        <section
+          class="hamburger-menu ct-container ct-deactivateOnOutsideClick"
+        >
           <!-- hamburger menu - clickable icon -->
           <img
             title="Menu"
@@ -97,30 +98,36 @@
           <div
             class="hamburger-menu-dropdown-container std-dropdown ct-affected ct-unactive"
           >
-            <div class="ct-container ct-deactivateOnOutsideClick">
-              <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+            <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+            <div
+              class="menu-option--settings ct-container ct-deactivateOnOutsideClick"
+            >
               <!-- settings icon - clickable button -->
-              <div class="menu-option-item clickable ct-toggler">
+              <button class="menu-option-item clickable ct-toggler">
                 <img src="../images/gear-icon.svg" alt="Settings-icon" />
                 <p>Settings</p>
-              </div>
+              </button>
 
               <!-- settings dropdown container -->
-              <section
-                class="settings-dropdown-container std-dropdown ct-affected ct-unactive"
+              <div
+                class="settings-dropdown-container std-dropdown ct-affected ct-unactive ct-deactivateOnOutsideClick"
               >
                 <h2>Settings</h2>
 
                 <!-- options in the settings menu -->
-                <section class="settings-options-section">
-                  <div class="settings-option">
-                    <p class="settings-option-text">Automatic Scroll</p>
-                    <button class="settings-option-inputfield">
-                      <img src="../images/gear-icon.svg" alt="Settings-icon" />
+                <div class="settings-option">
+                  <p class="settings-option-text">Automatic Scroll</p>
+                  <div class="settings-option-inputfield">
+                    <button
+                      class="automatic-scroll-toggle toggle-slider ct-container ct-toggler ct-active"
+                    >
+                      <div
+                        class="toggle-slider-knobb ct-affected ct-active"
+                      ></div>
                     </button>
                   </div>
-                </section>
-              </section>
+                </div>
+              </div>
             </div>
 
             <div class="menu-option-item clickable">
@@ -128,26 +135,26 @@
               <p>Profile</p>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- menu quick access options -->
-        <div class="menu-quickaccess-items-container">
-          <div class="menu-option--settings ct-container ct-deactivateOnOutsideClick">
-            <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+        <section class="menu-quickaccess-items-container">
+          <div
+            class="menu-option--settings ct-container ct-deactivateOnOutsideClick"
+          >
             <!-- settings icon - clickable button -->
-            <div class="menu-option-item clickable ct-toggler">
+            <button class="menu-option-item clickable ct-toggler">
               <img src="../images/gear-icon.svg" alt="Settings-icon" />
               <p>Settings</p>
-            </div>
+            </button>
 
             <!-- settings dropdown container -->
-            <section
+            <div
               class="settings-dropdown-container std-dropdown ct-affected ct-unactive ct-deactivateOnOutsideClick"
             >
               <h2>Settings</h2>
 
               <!-- options in the settings menu -->
-
               <div class="settings-option">
                 <p class="settings-option-text">Automatic Scroll</p>
                 <div class="settings-option-inputfield">
@@ -160,17 +167,15 @@
                   </button>
                 </div>
               </div>
-
-            </section>
+            </div>
           </div>
-
           <div class="menu-option-item clickable">
             <img src="../images/pfp.svg" alt="Settings-icon" />
             <p>Profile</p>
           </div>
-        </div>
+        </section>
       </section>
-    </nav>
+    </header>
 
     <!-- main website section -->
     <section class="website-main">
@@ -179,27 +184,27 @@
       <div class="info-boxes-container">
         <!-- ib = InfoBox -->
 
-
-        <script>
+        <!-- <script>
           document.querySelectorAll(".ib-t").forEach((element) => {
-              fetch("ib.html")
-                  .then(response => response.text())
-                  .then(data => {
-                      element.innerHTML = data; // Insert HTML
-      
-                      // Wait until content is inserted, then set the image
-                      let imgElement = element.querySelector(".ib-img");
-                      if (imgElement) {
-                          imgElement.src = element.getAttribute("data-img");
-                      }
-                  });
+            fetch("ib.html")
+              .then((response) => response.text())
+              .then((data) => {
+                element.innerHTML = data; // Insert HTML
+
+                // Wait until content is inserted, then set the image
+                let imgElement = element.querySelector(".ib-img");
+                if (imgElement) {
+                  imgElement.src = element.getAttribute("data-img");
+                }
+              });
           });
-      </script>
-      
-      <div class="ib-t" data-img="../images/about-us.jpg"></div>
+        </script>
 
+        <div class="ib-t" data-img="../images/about-us.jpg"></div> -->
 
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
+        <div
+          class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick"
+        >
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"
