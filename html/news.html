@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technoware - News</title>
 
     <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- browser tab properties -->
+    <title>Technoware - News</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -25,16 +27,19 @@
     />
   </head>
   <body>
-    <!-- top navigation menu -->
     <!-- using class lrc (LeftRightCenter) to to position children -->
-    <nav class="lrc-container">
+    <header class="lrc-container">
       <!-- left section of top navigation menu -->
-      <div class="lrc-left left-nav">
+      <section class="lrc-left">
         <!-- site navigation menu -->
-        <section class="site-navigation-section ct-container">
-          <div class="hl open-site-navigation-menu-button clickable ct-toggler">
+        <section
+          class="site-navigation-section ct-container ct-deactivateOnOutsideClick"
+        >
+          <button
+            class="open-site-navigation-menu-button current-site clickable ct-toggler"
+          >
             <!-- current site -->
-            <h2 class="current-site">News</h2>
+            News
 
             <!-- expand arrow -->
             <img
@@ -42,7 +47,7 @@
               src="../images/expand-arrow.svg"
               alt="dropdown arrow"
             />
-          </div>
+          </button>
 
           <!-- site navigation menu dropdown -->
           <div
@@ -55,16 +60,16 @@
           </div>
 
           <!-- site navigation quick access -->
-          <div class="site-navigation-menu-quickacces-items-container">
+          <section class="site-navigation-menu-quickacces-items-container">
             <a class="clickable" href="index.html"><h2>Home</h2></a>
             <a class="clickable" href="products.html"><h2>Products</h2></a>
             <a class="clickable" href="about_us.html"><h2>About us</h2></a>
-          </div>
+          </section>
         </section>
-      </div>
+      </section>
 
       <!-- center section of top navigation menu -->
-      <div class="lrc-center">
+      <section class="lrc-center">
         <!-- company logo -->
         <a href="index.html">
           <img
@@ -73,35 +78,40 @@
             alt="company logo"
           />
         </a>
-      </div>
+      </section>
 
       <!-- right section of topnavigation menu -->
       <section class="lrc-right menu">
         <!-- hamburger menu -->
-        <div class="hamburger-menu ct-container">
+        <section
+          class="hamburger-menu ct-container ct-deactivateOnOutsideClick"
+        >
           <!-- hamburger menu - clickable icon -->
-          <img
-            title="Menu"
-            class="menu-img clickable ct-toggler"
-            src="../images/hamburger-blue.svg"
-            alt="hamburger menu"
-          />
+          <button title="Menu" class="clickable ct-toggler">
+            <img
+              class="menu-img"
+              src="../images/hamburger-blue.svg"
+              alt="hamburger menu"
+            />
+          </button>
 
           <!-- hamburger menu dropdown container -->
           <div
             class="hamburger-menu-dropdown-container std-dropdown ct-affected ct-unactive"
           >
-            <div class="ct-container">
-              <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+            <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+            <div
+              class="menu-option--settings ct-container ct-deactivateOnOutsideClick"
+            >
               <!-- settings icon - clickable button -->
-              <div class="menu-option-item clickable ct-toggler">
+              <button class="menu-option-item clickable ct-toggler">
                 <img src="../images/gear-icon.svg" alt="Settings-icon" />
-                <p>Settings</p>
-              </div>
+                Settings
+              </button>
 
               <!-- settings dropdown container -->
-              <section
-                class="settings-dropdown-container std-dropdown ct-affected ct-unactive"
+              <div
+                class="settings-dropdown-container std-dropdown ct-affected ct-unactive ct-deactivateOnOutsideClick"
               >
                 <h2>Settings</h2>
 
@@ -109,427 +119,326 @@
 
                 <div class="settings-option">
                   <p class="settings-option-text">Automatic Scroll</p>
-                  <div class="settings-option-inputfield">
-                    <img src="../images/gear-icon.svg" alt="Settings-icon" />
-                  </div>
+                  <section class="settings-option-inputfield">
+                    <button
+                      class="automatic-scroll-toggle toggle-slider ct-container ct-toggler ct-active"
+                    >
+                      <span
+                        class="toggle-slider-knobb ct-affected ct-active"
+                      ></span>
+                    </button>
+                  </section>
                 </div>
-              </section>
+              </div>
             </div>
 
-            <div class="menu-option-item clickable">
+            <button class="menu-option-item clickable">
               <img src="../images/pfp.svg" alt="Settings-icon" />
-              <p>Profile</p>
-            </div>
+              Profile
+            </button>
           </div>
-        </div>
+        </section>
 
         <!-- menu quick access options -->
-        <div class="menu-quickaccess-items-container">
-          <div class="ct-container">
-            <!-- div to contain the "ct" click event inside this icon/option, ensures clicking this icon only activates dropdown for this icon/option -->
+        <section class="menu-quickaccess-items-container">
+          <div
+            class="menu-option--settings ct-container ct-deactivateOnOutsideClick"
+          >
             <!-- settings icon - clickable button -->
-            <div class="menu-option-item clickable ct-toggler">
+            <button class="menu-option-item clickable ct-toggler">
               <img src="../images/gear-icon.svg" alt="Settings-icon" />
-              <p>Settings</p>
-            </div>
+              Settings
+            </button>
 
             <!-- settings dropdown container -->
-            <section
-              class="settings-dropdown-container std-dropdown ct-affected ct-unactive"
+            <div
+              class="settings-dropdown-container std-dropdown ct-affected ct-unactive ct-deactivateOnOutsideClick"
             >
               <h2>Settings</h2>
 
               <!-- options in the settings menu -->
-
               <div class="settings-option">
                 <p class="settings-option-text">Automatic Scroll</p>
-                <div class="settings-option-inputfield">
-                  <img src="../images/gear-icon.svg" alt="Settings-icon" />
-                </div>
+                <section class="settings-option-inputfield">
+                  <button
+                    class="automatic-scroll-toggle toggle-slider ct-container ct-toggler ct-active"
+                  >
+                    <span
+                      class="toggle-slider-knobb ct-affected ct-active"
+                    ></span>
+                  </button>
+                </section>
               </div>
-            </section>
+            </div>
           </div>
-
-          <div class="menu-option-item clickable">
+          <button class="menu-option-item clickable">
             <img src="../images/pfp.svg" alt="Settings-icon" />
-            <p>Profile</p>
-          </div>
-        </div>
+            Profile
+          </button>
+        </section>
       </section>
-    </nav>
+    </header>
 
     <!-- main website section -->
     <section class="website-main">
-      <h1>News</h1>
+      <h1>Products</h1>
 
       <div class="info-boxes-container">
         <!-- ib = InfoBox -->
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
+
+        <!-- <script>
+          document.querySelectorAll(".ib-t").forEach((element) => {
+            fetch("ib.html")
+              .then((response) => response.text())
+              .then((data) => {
+                element.innerHTML = data; // Insert HTML
+
+                // Wait until content is inserted, then set the image
+                let imgElement = element.querySelector(".ib-img");
+                if (imgElement) {
+                  imgElement.src = element.getAttribute("data-img");
+                }
+              });
+          });
+        </script>
+
+        <div class="ib-t" data-img="../images/about-us.jpg"></div> -->
+
+        <script></script>
+
+        <div
+          class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick"
+        >
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
+              src="../images/sensor-6662437.svg"
               alt="Subject image"
             />
             <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">New tech</h2>
+              <h2 class="ib-title">Revolutionary Bio-Integrated Sensors</h2>
 
               <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
+                Teknoware is proud to announce a groundbreaking advancement in
+                wearable technology with the development of our new
               </p>
             </div>
           </section>
 
           <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
+              Teknoware is proud to announce a groundbreaking advancement in
+              wearable technology with the development of our new bio-integrated
+              sensors. These sensors seamlessly integrate with the body,
+              providing continuous and accurate health data without the
+              discomfort or limitations of traditional wearable devices. This
+              breakthrough utilizes a novel biocompatible material that allows
+              for comfortable, long-term wear, opening up new possibilities for
+              personalized healthcare. The bio-integrated sensors are designed
+              to monitor various vital signs, including heart rate, blood
+              pressure, and blood oxygen levels, transmitting data wirelessly to
+              a user's smartphone or other compatible devices. This innovation
+              represents a significant step towards proactive health management
+              and personalized medicine. Further research and development are
+              underway to expand the capabilities of these sensors, paving the
+              way for more comprehensive and accurate health monitoring in the
+              future. We are excited about the potential of this technology to
+              transform the healthcare industry and improve people's lives.
             </p>
           </section>
 
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
+          <button class="clickable ct-toggler ct-affected">
+            <img
+              class="ib-expand-button"
+              src="../images/ExpandButton.svg"
+              alt="Expand button"
+            />
+          </button>
         </div>
 
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
+        <div
+          class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick"
+        >
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
+              src="../images/gem-3190526_640.jpg"
               alt="Subject image"
             />
             <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">Our latest products</h2>
+              <h2 class="ib-title">New Material with enhanced durability</h2>
 
               <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
+                Teknoware has developed a new, ultra-durable material for use in
+                its wearable devices. This groundbreaking material,
               </p>
             </div>
           </section>
 
           <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
+              Teknoware has developed a new, ultra-durable material for use in
+              its wearable devices. This groundbreaking material, known as
+              'DuraWeave,' is significantly more resistant to scratches,
+              impacts, and wear and tear than traditional materials used in
+              wearables. DuraWeave offers superior flexibility and comfort,
+              ensuring that Teknoware's products remain stylish and comfortable,
+              even with increased durability. The development of DuraWeave is
+              the result of years of research and development, focusing on
+              creating a material that can withstand the rigors of daily use
+              without compromising on aesthetics or comfort. This innovation
+              will significantly enhance the longevity of Teknoware's products,
+              reducing electronic waste and providing customers with a more
+              sustainable and long-lasting wearable experience. We are committed
+              to using innovative materials that not only improve the
+              performance of our devices but also contribute to environmental
+              sustainability. DuraWeave is a testament to our commitment to
+              innovation and environmental responsibility.
             </p>
           </section>
 
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
+          <button class="clickable ct-toggler ct-affected">
+            <img
+              class="ib-expand-button"
+              src="../images/ExpandButton.svg"
+              alt="Expand button"
+            />
+          </button>
         </div>
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
+        <div
+          class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick"
+        >
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
+              src="../images/herbs-906140_640.jpg"
               alt="Subject image"
             />
             <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">Technological advancements</h2>
+              <h2 class="ib-title">AI-Powered Health Assistant</h2>
 
               <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
+                Teknoware is revolutionizing personal wellness with the launch
+                of its new AI-powered health assistant, integrated into
               </p>
             </div>
           </section>
 
           <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
+              Teknoware is revolutionizing personal wellness with the launch of
+              its new AI-powered health assistant, integrated into our latest
+              line of wearable devices. This sophisticated AI analyzes health
+              data collected by the devices, providing personalized insights and
+              recommendations to users. The health assistant can identify
+              potential health concerns, suggest lifestyle changes, and even
+              connect users with healthcare professionals when necessary. The AI
+              continuously learns and adapts to each user's unique needs,
+              providing increasingly accurate and relevant information over
+              time. This technology represents a significant leap forward in
+              personalized healthcare, empowering individuals to take control of
+              their health and wellness. The AI-powered health assistant is
+              designed to be intuitive and easy to use, providing users with a
+              seamless and informative experience. We are committed to
+              developing innovative technology that empowers individuals to live
+              healthier and more fulfilling lives. This AI-powered health
+              assistant is a testament to our dedication to improving people's
+              wellbeing.
             </p>
           </section>
 
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
+          <button class="clickable ct-toggler ct-affected">
+            <img
+              class="ib-expand-button"
+              src="../images/ExpandButton.svg"
+              alt="Expand button"
+            />
+          </button>
         </div>
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
+        <div
+          class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick"
+        >
           <section class="ib-introduction-section ct-affected ct-unactive">
             <img
               class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
+              src="../images/cyborg-6604411_640.jpg"
               alt="Subject image"
             />
             <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">About us</h2>
+              <h2 class="ib-title">Human-Computer Interaction</h2>
 
               <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
+                Teknoware is at the forefront of innovation in human-computer
+                interaction, exploring new ways for people to interact with
               </p>
             </div>
           </section>
 
           <section class="ib-info-text-section">
             <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
+              Teknoware is at the forefront of innovation in human-computer
+              interaction, exploring new ways for people to interact with
+              technology seamlessly and intuitively. We are investing heavily in
+              research and development to create more natural and intuitive
+              interfaces for our wearable devices. This includes exploring
+              technologies such as brain-computer interfaces, gesture
+              recognition, and advanced haptic feedback systems. Our goal is to
+              create wearable devices that are not just functional but also
+              enjoyable and engaging to use. We believe that the future of
+              technology lies in creating seamless and intuitive interfaces that
+              enhance people's lives. We are committed to pushing the boundaries
+              of what's possible, exploring new ways to interact with technology
+              that are more natural, intuitive, and engaging. Our research and
+              development efforts are focused on creating a future where
+              technology seamlessly integrates with our lives, enhancing our
+              experiences and making our daily tasks easier and more enjoyable.
             </p>
           </section>
 
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
-        </div>
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
-          <section class="ib-introduction-section ct-affected ct-unactive">
+          <button class="clickable ct-toggler ct-affected">
             <img
-              class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
-              alt="Subject image"
+              class="ib-expand-button"
+              src="../images/ExpandButton.svg"
+              alt="Expand button"
             />
-            <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">About us</h2>
-
-              <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
-              </p>
-            </div>
-          </section>
-
-          <section class="ib-info-text-section">
-            <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
-            </p>
-          </section>
-
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
-        </div>
-        <div class="ib ct-container ct-affected ct-unactive ct-deactivateOnOutsideClick">
-          <section class="ib-introduction-section ct-affected ct-unactive">
-            <img
-              class="ib-img ct-affected ct-unactive"
-              src="../images/about-us.jpg"
-              alt="Subject image"
-            />
-            <div class="ib-introduction-text-section ct-affected ct-unactive">
-              <h2 class="ib-title">About us</h2>
-
-              <p class="ib-introduction-text">
-                Technoware Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ab aliquid sed quisquam dolor reprehenderit aspernatur
-                debitis tempore corrupti omnis magni.
-              </p>
-            </div>
-          </section>
-
-          <section class="ib-info-text-section">
-            <p class="ib-info-text ct-unactive ct-affected">
-              Technoware is a leading tech conpany specialising in wearable
-              products Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eius deleniti nostrum optio laudantium praesentium dignissimos
-              error quo quam illo, reiciendis, quia amet velit architecto est,
-              eos deserunt iste possimus reprehenderit? Non esse magni harum hic
-              placeat laborum! Tempora, minus saepe cupiditate accusantium quo
-              ex optio nesciunt a quia dolorem nobis commodi adipisci
-              distinctio. Tenetur fugiat delectus praesentium est error
-              doloremque dolores quos vel! Vitae at ab ea vero consectetur.
-              Magnam asperiores sit quos minus commodi ipsam vitae perferendis
-              quia atque similique porro perspiciatis voluptatum est, provident
-              cum maxime eaque quas, architecto blanditiis! Doloremque, sapiente
-              laborum neque reprehenderit fugiat deleniti libero autem aut
-              voluptatibus debitis nam earum, inventore culpa amet atque
-              perspiciatis id quibusdam optio aliquid sequi, quidem adipisci!
-              Culpa libero, totam eius temporibus doloribus ipsum ex blanditiis
-              distinctio. Veritatis amet perspiciatis architecto, quisquam hic
-              vitae porro facilis nam non veniam aperiam sed ab quia ipsam sit
-              neque iure praesentium at error. Repellat reprehenderit architecto
-              quibusdam blanditiis fugiat illum odio consequatur perferendis,
-              quaerat itaque numquam doloremque culpa ea iure sapiente,
-              dignissimos aliquid accusamus quis id consectetur deserunt soluta
-              labore. Asperiores quae, sit quos nobis ipsam esse animi
-              doloremque error. Possimus assumenda id ipsum nam exercitationem
-              commodi tempore. Voluptates dicta error et! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Maiores laboriosam quasi atque
-              beatae dolore expedita necessitatibus! At maxime praesentium optio
-              deserunt vero, sunt ducimus ad, accusamus vitae sed eum ut
-              tempora. Dolorum cum vitae vero ratione quae, quibusdam odio nam
-              deserunt dolore laborum distinctio laboriosam dolorem nostrum ab
-              dolores! Ab!
-            </p>
-          </section>
-
-          <img
-            class="ib-expand-button clickable ct-toggler ct-affected"
-            src="../images/ExpandButton.svg"
-            alt="Expand button"
-          />
+          </button>
         </div>
       </div>
     </section>
 
-    <footer></footer>
-
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            Technoware: Innovating wearable technology. We craft cutting-edge
+            devices seamlessly blending style and function for a connected life.
+          </p>
+          <p><a href="about_us.html">Learn More</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:info@yourcompany.com">info@technoware.com</a>
+          </p>
+          <p>Phone: +46-555-123-4567</p>
+          <p>Address: Teknikvägen 24</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Technoware. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="../js/main.js"></script>
   </body>
 </html>

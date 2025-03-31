@@ -205,18 +205,15 @@ header {
   justify-content: center;
 }
 
-.menu-option-item p{
-  font-size: x-small;
-  margin: 0;
-  text-align: center;
-  line-height: 90%;
-}
-
 .menu-option-item{
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0.5em;
   width: 40px;
+  color: white;
+  line-height: 90%;
+  font-size: x-small;
 }
 
 .hamburger-menu-dropdown-container{
@@ -315,6 +312,9 @@ header {
   margin: 10px;
   display: flex;
   color: blue;
+  align-items: center;
+  font-size: x-large;
+  font-family: "Audiowide", Arial, Helvetica, sans-serif;
 }
 
 /* Expand arrow */
