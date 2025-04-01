@@ -1,17 +1,19 @@
+/* jshint esversion: 6 */
+
 // developer debug mode
 let debug_mode = true;
 
 
 // ct = Class Toggler
 // add event listener to all elements with the "ct-toggler" class in order to allow code to be executed when they are clicked
-document.querySelectorAll(".ct-toggler").forEach((toggle) => {
+document.querySelectorAll('.ct-toggler').forEach((toggle) => {
   toggle.addEventListener("click", function (event) {
 
     let container;
 
     //check if clicked element is a ct-container
     if (this.classList.contains(".ct-container")) {
-      container = this
+      container = this;
       console.error("Error: clicked object is container");
     } else {
       // find the closest relative/anscestor to this element that has the "ct-container" class and input that in to a variable
@@ -26,7 +28,7 @@ document.querySelectorAll(".ct-toggler").forEach((toggle) => {
     }
 
     // find all elements with the "ct-affected" class inside this container -later- but not inside other elements with the "ct-container" class
-    let allAffected = container.querySelectorAll(".ct-affected");
+    let allAffected = container.querySelectorAll('.ct-affected');
 
     // filter out elements that are inside another ".ct-container"
     let affectedElements = Array.from(allAffected).filter(
@@ -65,7 +67,7 @@ document.addEventListener("click", function (event) {
 
       // find all active children, but only deactivate the ones that have this container
       // as their closest ct-container
-      container.querySelectorAll(".ct-active").forEach((activeElement) => {
+      container.querySelectorAll('.ct-active').forEach((activeElement) => {
         if (activeElement.closest(".ct-container") === container) {
           activeElement.classList.remove("ct-active");
           activeElement.classList.add("ct-unactive");
@@ -104,7 +106,7 @@ HTMLElement.prototype.ctSetState = function ctSetState(state) {
     this.classList.remove("ct-active");
     this.classList.add("ct-unactive");
   }
-}
+};
 
 // get the class toggler state of element by returning true if it has class ct-active
 // and returning false otherwise
@@ -114,10 +116,10 @@ HTMLElement.prototype.ctGetState = function ctGetState() {
   } else {
     return false;
   }
-}
+};
 
 //scroll to the IB when it is clicked
-document.querySelectorAll(".ib-expand-button").forEach((toggle) => {
+document.querySelectorAll('.ib-expand-button').forEach((toggle) => {
   toggle.addEventListener("click", function (event) {
     // only scroll if the setting is enabled
     if (auto_scroll_enabled) {
@@ -144,13 +146,13 @@ if (debug_mode) {
     if (event.ctrlKey && event.key === 'b') {
       show_borders = !show_borders;
 
-      document.querySelectorAll("*").forEach((el) => {
+      document.querySelectorAll('*').forEach((el) => {
         if (show_borders) {
           el.classList.add("show-borders");
         }else{
           el.classList.remove("show-borders");
         }
-      })
+      });
     }
   });
 }

@@ -14,7 +14,7 @@
     use class "ct-toggler" for the element that activates class-toggling for elements with 
     class "ct-affected" 
 
-    use class "ct-deactivateOnOutsideClick" to specify if an element with class "ct-affected"
+    use class "ct-deactivateOnOutsideClick" to specify if elements with class "ct-affected"
     should be deactivated if a click occurs outside it's ct-container (usefull for dropdowns)
   */
 
@@ -27,18 +27,18 @@
     and will throw error in console if in "debug mode" 
     */
 
-/* Use convention (order of style assignment):
+/* Use convention in css (order of style assignment):
   assign default style: #1 
   assign unactive style: #2
-  assign active style:#3
+  assign active style: #3
 */
 
 /* ==================================================================================================== */
 
 /* Overritable tool classes */
 
-/* Debug */
 
+/* Debug */
 .show-borders {
   border: solid red 1px;
   box-sizing: border-box;
@@ -77,8 +77,6 @@
 /* Default Global Presets */
 
 body {
-  /* height: min-content; */
-
   /* style */
   background-color: black;
 
@@ -87,28 +85,31 @@ body {
   text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.9);
 
   /* margin/padding */
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 
   /* background image */
   background-image: url('../images/tech-background.jpeg');
   background-size: cover;
   background-attachment: fixed;
 }
+
 /* buttons */
 button {
   border: none;
   background-color: rgba(0, 0, 0, 0.0);
-  padding: 0%;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
 }
+
 /* links */
 a{
   text-decoration: underline;
   text-decoration-color: blue;
   color: black;
 }
+
 /* headings */
 h1, h2 {
   font-family: "Audiowide", Arial, Helvetica, sans-serif;
@@ -117,7 +118,8 @@ h1, h2 {
 h3 {
   font-family: "Audiowide", Arial, Helvetica, sans-serif;
 }
-/* normal text */
+
+/* normal text paragraphs */
 p{
   font-family: "Chakra Petch", Arial, Helvetica, sans-serif;
   color: white;
@@ -155,30 +157,25 @@ p{
 }
 
 
-
 /* ==================================================================================================== */
 
 /* Navigation menu */
 
 header {
-  /* style */
   background-color: rgba(0, 0, 0, 0.7);
   padding: 1%;
-
-  /* display */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-logo {
-  /* shape */
   width: 100px;
 }
 
 /* ==================================================================================================== */
 
-/* menu */
+/* menu area */
 
 .menu{
   padding: 0;
@@ -188,9 +185,7 @@ header {
 }
 
 /* Hamburger menu */
-
 .menu-img {
-  /* shape */
   width: 60px;
 }
 
@@ -231,8 +226,6 @@ header {
 
 .hamburger-menu-dropdown-container.ct-unactive{
   opacity: 0;
-
-  /* position/animation */
   transition: ease-in, var(--transition-speed);
   transform: translateY(0);
 }
@@ -250,7 +243,7 @@ header {
   width: 15em;
 }
 
-
+/* clickable option button -> settings */
 .settings-option {
   display: flex;
   flex-direction: row;
@@ -327,7 +320,7 @@ header {
   rotate: 180deg;
 }
 
-/* Quick access items */
+/* Quick access items (visible on the right side of dropdown button if space avalible) */
 .site-navigation-menu-quickacces-items-container {
   display: flex;
 }
@@ -344,15 +337,11 @@ header {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-
-  /* position/animation */
   transition: ease-in, var(--transition-speed);
   transform: translateY(0);
 }
 .site-navigation-menu-items-container.ct-active {
   opacity: 100%;
-
-  /* position/animation */
   transition: ease-in, var(--transition-speed);
   transform: translateY(100px);
   position: absolute;
@@ -377,7 +366,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   margin: 0;
   padding: 0;
 }
@@ -387,28 +375,24 @@ header {
 /* Info boxes */
 
 .ib {
-  
-  /* display */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  /* shape/position */
   margin: 2%;
   padding: 3%;
   height: fit-content;
-  /* apperance */
   background-color: rgba(0, 4, 255, 0.178);
   border-radius: 3cap;
   box-shadow: 1px 1px 0.5em black;
-  /* width: 600px; */
   height: max-content;
 
 }
+.ib h2 {
+  color: white;
+}
 .ib.ct-unactive{
-  /* transition */
   transition: ease-in-out, var(--transition-speed);
-
   width: 40%;
 }
 
@@ -451,12 +435,16 @@ header {
 .ib-introduction-text-section.ct-active{
   width: 20em;
 }
+.ib button {
+  width: 10%;
+}
 .ib-expand-button {
   transition: var(--transition-speed);
-  width: 10%;
+  width: 100%;
   cursor: pointer;
 }
 .ib-expand-button.ct-active {
+  width: 60%;
   transition: var(--transition-speed);
   transform: rotate(-90deg);
 }
@@ -549,7 +537,7 @@ footer {
   .ib-introduction-section.ct-unactive{
     flex-direction: column;
   }
-
+  
   .ib-expand-button{
     transform: rotateZ(90deg);
   }
@@ -571,6 +559,7 @@ footer {
 /* Phone */
 
 @media (max-width: 20cm) {
+  /* ib */
   .ib.ct-unactive{
     transition: ease-in-out, var(--transition-speed);
     width: 100%;
@@ -597,4 +586,3 @@ footer {
     width: 100%;
   }
 }
-
