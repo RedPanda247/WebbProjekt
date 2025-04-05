@@ -54,14 +54,14 @@
             class="site-navigation-menu-items-container std-dropdown ct-unactive ct-affected"
           >
             <!-- sites to go to -->
-            <a class="clickable" href="index.html"><h2>Home</h2></a>
+            <a class="clickable" href="home.html"><h2>Home</h2></a>
             <a class="clickable" href="products.html"><h2>Products</h2></a>
             <a class="clickable" href="about_us.html"><h2>About us</h2></a>
           </div>
 
           <!-- site navigation quick access -->
           <section class="site-navigation-menu-quickacces-items-container">
-            <a class="clickable" href="index.html"><h2>Home</h2></a>
+            <a class="clickable" href="home.html"><h2>Home</h2></a>
             <a class="clickable" href="products.html"><h2>Products</h2></a>
             <a class="clickable" href="about_us.html"><h2>About us</h2></a>
           </section>
@@ -71,7 +71,7 @@
       <!-- center section of top navigation menu -->
       <section class="lrc-center">
         <!-- company logo -->
-        <a href="index.html">
+        <a href="../index.html">
           <img
             class="nav-logo clickable"
             src="../images/company-logo.svg"
@@ -131,11 +131,41 @@
                 </div>
               </div>
             </div>
-
-            <button class="menu-option-item clickable">
-              <img src="../images/pfp.svg" alt="Settings-icon" />
-              Profile
-            </button>
+            <div
+              class="menu-option--profile ct-container ct-deactivateOnOutsideClick"
+            >
+              <!-- profile icon - clickable button -->
+              <button class="menu-option-item clickable ct-toggler">
+                <img src="../images/pfp.svg" alt="Settings-icon" />
+                Profile
+              </button>
+              <!-- profile dropdown container -->
+              <div
+                class="profile-dropdown-container std-dropdown ct-affected ct-unactive"
+              >
+                <img
+                  class="profile-dropdown--pfp"
+                  src="../images/pfp.svg"
+                  alt="Profile image"
+                />
+                <form class="log-in-form">
+                  <h1>Log in</h1>
+                  <input
+                    class="log-in--inputfield"
+                    type="password"
+                    placeholder="Password"
+                  />
+                  <input
+                    class="log-in--inputfield"
+                    type="email"
+                    placeholder="Email"
+                  />
+                  <button class="log-in--submit-button clickable" type="submit">
+                    Log in
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -171,10 +201,41 @@
               </div>
             </div>
           </div>
-          <button class="menu-option-item clickable">
-            <img src="../images/pfp.svg" alt="Settings-icon" />
-            Profile
-          </button>
+          <div
+            class="menu-option--profile ct-container ct-deactivateOnOutsideClick"
+          >
+            <!-- profile icon - clickable button -->
+            <button class="menu-option-item clickable ct-toggler">
+              <img src="../images/pfp.svg" alt="Settings-icon" />
+              Profile
+            </button>
+            <!-- profile dropdown container -->
+            <div
+              class="profile-dropdown-container std-dropdown ct-affected ct-unactive"
+            >
+              <img
+                class="profile-dropdown--pfp"
+                src="../images/pfp.svg"
+                alt="Profile image"
+              />
+              <form class="log-in-form">
+                <h1>Log in</h1>
+                <input
+                  class="log-in--inputfield"
+                  type="password"
+                  placeholder="Password"
+                />
+                <input
+                  class="log-in--inputfield"
+                  type="email"
+                  placeholder="Email"
+                />
+                <button class="log-in--submit-button clickable" type="submit">
+                  Log in
+                </button>
+              </form>
+            </div>
+          </div>
         </section>
       </section>
     </header>
@@ -397,7 +458,7 @@
         <div class="footer-column">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>

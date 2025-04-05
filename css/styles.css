@@ -131,7 +131,7 @@ p{
   --transition-speed: 500ms;
 }
 
-/* standard dropdown container style and behaviour */
+/* standard dropdown container style and behaviour (using "Class Toggler") */
 .std-dropdown {
   background-color: rgb(20, 20, 20);
   border: solid 0px;
@@ -285,7 +285,39 @@ header {
 .toggle-slider-knobb.ct-active {
   float: right;
   transition: var(--transition-speed);
- }
+}
+
+.profile-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  width: 15em;
+  direction: ltr;
+}
+.profile-dropdown--pfp {
+  width: 50%;
+}
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.log-in--inputfield {
+  border-radius: 20px;
+  padding: 6px;
+  background-color: #333333;
+  margin: 4px;
+  text-shadow: 0 0 0.2em black;
+  color: white;
+}
+.log-in--submit-button {
+  border-radius: 40px;
+  background-color: white;
+  width: 50%;
+  margin: 8%;
+  padding: 6px;
+}
 
 /* ==================================================================================================== */
 
@@ -533,15 +565,12 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
   .ib-introduction-section.ct-unactive{
     flex-direction: column;
   }
-  
   .ib-expand-button{
     transform: rotateZ(90deg);
   }
-
   .ib-img.ct-unactive{
     width: 100%;
   }
@@ -559,6 +588,10 @@ footer {
 /* Phone */
 
 @media (max-width: 20cm) {
+  /* quick acces menu items */
+  .menu-quickaccess-items-container{
+    display: none;
+  }
   /* ib */
   .ib.ct-unactive{
     transition: ease-in-out, var(--transition-speed);
@@ -572,7 +605,10 @@ footer {
     flex-direction: column;
   }
   .ib-introduction-text-section{
-    width: 90%;
+    max-width: 25em;
+  }
+  .ib-introduction-text-section.ct-active{
+    width: 80%;
   }
   .ib-img{
     width: 100%;

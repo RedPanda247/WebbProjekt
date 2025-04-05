@@ -1,0 +1,136 @@
+/* Debug */
+.show-borders {
+    border: solid red 1px;
+    box-sizing: border-box;
+  }
+/* transition speed */
+:root {
+    --transition-speed: 2000ms;
+}
+/* =============================================================================== */
+/* website / content */
+body {
+    background-image: url('images/conny-schneider-xuTJZ7uD7PI-unsplash.jpg');
+    background-size: cover; 
+    background-attachment: fixed;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    /* min-height: 1500px; */
+}
+/* =============================================================================== */
+
+/* company logo */
+.conpany-logo {
+    opacity: 0;
+    margin: 10% 0 5% 0;
+    width: 30%;
+    min-width: 10em;
+    animation: appear var(--transition-speed) ease-in 0.3s;
+    animation-fill-mode: forwards;
+}
+/* animation deffinition */
+@keyframes appear {
+    0% {
+
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* =============================================================================== */
+
+.welcome-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: appear var(--transition-speed) ease-in 1s;
+    animation-fill-mode: forwards;
+}
+.welcome-text-container h1 {
+    font-size: 7em;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 0.3em black;
+    text-align: center;
+}
+/* Phone */
+
+@media (max-width: 20cm) {
+    .welcome-text-container h1 {
+        font-size: 4em;
+    }
+}
+.welcome-to--part {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+/* =============================================================================== */
+
+.site-navigation-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.site-navigation-container a {
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+}
+.site-navigation-container h2 {
+    width: min-content;
+    opacity: 0;
+    color: white;
+    text-shadow: 0 0 0.3em black;
+    height: 1em;
+    margin: 0.1em;
+    transition: calc(var(--transition-speed) / 4);
+    font-size: 3em;
+}
+.site-navigation-container h2:hover {
+    transition: calc(var(--transition-speed) / 4);
+    font-size: 5em;
+}
+#sL-1 {
+    animation: appearFromRight var(--transition-speed) ease-in 1s;
+    animation-fill-mode: forwards;
+}
+#sL-2 {
+    animation: appearFromLeft var(--transition-speed) ease-in 1.5s;
+    animation-fill-mode: forwards;
+}
+#sL-3 {
+    animation: appearFromRight var(--transition-speed) ease-in 2s;
+    animation-fill-mode: forwards;
+}
+#sL-4 {
+    animation: appearFromLeft var(--transition-speed) ease-in 2.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appearFromRight {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes appearFromLeft {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
